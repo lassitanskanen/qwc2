@@ -27,6 +27,7 @@ class TopBar extends React.Component {
         appMenuVisibleOnStartup: PropTypes.bool,
         components: PropTypes.object,
         fullscreen: PropTypes.bool,
+        layerTreeVisibleOnStartup: PropTypes.bool,
         logoFormat: PropTypes.string,
         logoSrc: PropTypes.string,
         logoUrl: PropTypes.string,
@@ -93,7 +94,8 @@ class TopBar extends React.Component {
                         appMenuClearsTask={this.props.appMenuClearsTask} buttonContents={buttonContents}
                         menuItems={this.props.menuItems}
                         openExternalUrl={this.props.openExternalUrl}
-                        showOnStartup={this.props.appMenuVisibleOnStartup} />
+                        showOnStartup={this.props.appMenuVisibleOnStartup}
+                        showLayerTreeOnStartup={this.props.layerTreeVisibleOnStartup} />
                     <this.props.components.FullscreenSwitcher />
                 </div>
             </Swipeable>
