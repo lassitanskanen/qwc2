@@ -28,7 +28,8 @@ class AppMenu extends React.Component {
         onMenuToggled: PropTypes.func,
         openExternalUrl: PropTypes.func,
         setCurrentTask: PropTypes.func,
-        showOnStartup: PropTypes.bool
+        showOnStartup: PropTypes.bool,
+        showLayerTreeOnStartup: PropTypes.bool
     }
     static defaultProps = {
         onMenuToggled: () => {}
@@ -42,8 +43,11 @@ class AppMenu extends React.Component {
         this.menuEl = null;
     }
     componentDidMount() {
-        if (this.props.showOnStartup) {
+        if (this.props.showOnStartup && !this.props.showLayerTreeOnStartup ) {
             this.toggleMenu();
+        }
+        if (this.props.showLayerTreeOnStartup) {
+            this.props.setCurrentTask("LayerTree");
         }
     }
     toggleMenu = () => {
