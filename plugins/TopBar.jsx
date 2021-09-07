@@ -50,10 +50,11 @@ class TopBar extends React.Component {
         let buttonContents;
         let logo;
         const assetsPath = ConfigUtils.getAssetsPath();
+        const tooltip = LocaleUtils.tr("appmenu.menulabel");
         if (this.props.mobile) {
             buttonContents = (
                 <span className="appmenu-button">
-                    <Icon className="appmenu-icon" icon="menu-hamburger"/>
+                    <Icon className="appmenu-icon" icon="menu-hamburger" title={tooltip}/>
                 </span>
             );
             logo = assetsPath + "/img/logo-mobile." + this.props.logoFormat;
@@ -61,7 +62,7 @@ class TopBar extends React.Component {
             buttonContents = (
                 <span className="appmenu-button">
                     <span className="appmenu-label">{LocaleUtils.tr("appmenu.menulabel")}</span>
-                    <Icon className="appmenu-icon" icon="menu-hamburger"/>
+                    <Icon className="appmenu-icon" icon="menu-hamburger" title={tooltip}/>
                 </span>
             );
             logo = assetsPath + "/img/logo."  + this.props.logoFormat;
